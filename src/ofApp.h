@@ -19,4 +19,8 @@ class ofApp : public ofBaseApp
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
+	private:
+		ofEasyCam cam;
+  		ofMesh mesh;
+		const int mesh_size = 50;
 };
