@@ -14,6 +14,7 @@ void ofApp::setup()
         for (int y = 0; y < mesh_size; y++)
         {
             mesh.addVertex(ofPoint(x - (mesh_size/2), (y - (mesh_size/2))));
+            mesh.addColor(ofFloatColor(1.0, 1.0, 1.0));
         }
     }
     /* Add vertices connections */
@@ -40,7 +41,7 @@ void ofApp::update()
         ofVec3f position = mesh.getVertex(idx);
         position.z = ofMap(perlin_noise, 0, 1, 0, 20);
         mesh.setVertex(idx, position);
-
+        mesh.setColor(idx, ofFloatColor(perlin_noise, 0, 0));
     }
 }
 
