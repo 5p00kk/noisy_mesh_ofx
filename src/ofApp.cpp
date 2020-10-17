@@ -34,7 +34,14 @@ void ofApp::setup()
 //--------------------------------------------------------------
 void ofApp::update()
 {
+    for (int idx = 0; idx < mesh_size*mesh_size; idx++)
+    {
+        float perlin_noise = ofNoise(idx, ofGetElapsedTimef());
+        ofVec3f position = mesh.getVertex(idx);
+        position.z = ofMap(perlin_noise, 0, 1, 0, 20);
+        mesh.setVertex(idx, position);
 
+    }
 }
 
 //--------------------------------------------------------------
