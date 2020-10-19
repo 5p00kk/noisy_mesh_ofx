@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
+#include "ofxKinectV2.h"
 
 class ofApp : public ofBaseApp
 {
@@ -20,6 +21,8 @@ class ofApp : public ofBaseApp
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 	private:
+		ofxKinectV2 kinect;
+		ofTexture texDepth;
 		ofEasyCam cam;
   		ofMesh mesh;
 		const int mesh_size = 50;

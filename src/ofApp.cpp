@@ -30,6 +30,16 @@ void ofApp::setup()
             mesh.addIndex(x + (y + 1) * mesh_size);
         }
     }
+
+    /* Open Kinect */
+    ofxKinectV2 tmp_kinect;
+    std::vector<ofxKinectV2::KinectDeviceInfo> device_list = tmp_kinect.getDeviceList();
+    if(device_list.size() == 0)
+        std::cout << "setup: ERROR: No kinect found\n";
+    if(kinect.open(device_list[0].serial))
+        std::cout << "setup: SUCCESS: Kinect opened\n";
+    else
+        std::cout << "setup: ERROR: Kinect not opened\n";
 }
 
 //--------------------------------------------------------------
