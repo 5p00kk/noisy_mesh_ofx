@@ -3,6 +3,8 @@
 //--------------------------------------------------------------
 void ofApp::setup()
 {
+    ofBackground(0,0,0);
+
     /* Place camera */
     cam.setDistance(100);
     /* Triangle mesh */
